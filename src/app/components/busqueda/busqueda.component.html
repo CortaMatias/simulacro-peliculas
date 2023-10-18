@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <app-listado-peliculas (peliculaSelected)="onPeliculaSelected($event)"></app-listado-peliculas>
+  </div>
+
+  <div class="row m-4 p-3">
+    <app-detalle-pelicula [pelicula]="selectedPelicula" *ngIf="selectedPelicula" ></app-detalle-pelicula>
+  </div>
+</div>

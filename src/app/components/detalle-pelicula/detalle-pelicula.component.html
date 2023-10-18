@@ -1,0 +1,14 @@
+<div class="container" *ngFor="let pelicula of peliculas">
+  <div class="card p-3 m-3" style="width: 18rem;">
+    <img src="{{pelicula.fotoPelicula}}" class="card-img-top" alt="{{pelicula.nombre}}" style="height: 200px; object-fit: contain;" >
+    <div class="card-body">
+      <h5 class="card-title">{{pelicula.nombre}}</h5>
+      <p class="card-text">
+        Tipo: {{pelicula.tipo}}<br>
+        Fecha de Estreno: {{pelicula.fechaEstreno | date:'longDate'}}<br>
+        Cantidad de Público: {{pelicula.cantidadPublico}}<br>
+        Actor: {{pelicula.actor}}
+      </p>
+    </div>
+  </div>
+</div>

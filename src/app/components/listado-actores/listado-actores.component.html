@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">País</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let actor of actores"   (click)="seleccionarActor(actor)"  [class.selected]="actor === selectedActor" >
+            <td>{{actor.nombre}}</td>
+            <td>{{actor.apellido}}</td>
+            <td>{{actor.edad}}</td>
+            <td>{{actor.pais}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+</div>

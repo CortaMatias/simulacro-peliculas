@@ -1,0 +1,59 @@
+<div class="container text-light">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div *ngIf="imagenURL">
+          <img [src]="imagenURL" alt="Imagen seleccionada" id="foto" class="image" />
+        </div>
+
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" formControlName="nombre">
+        </div>
+      
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo</label>
+          <select class="form-control" id="tipo" formControlName="tipo">
+            <option value="Terror">Terror</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Acción">Acción</option>
+            <option value="Aventuras">Aventuras</option>
+            <option value="Romance">Romance</option>
+          </select>
+        </div>
+      
+        <div class="mb-3">
+          <label for="actor" class="form-label">Actor</label>
+          <label for="fechaEstreno" class="form-label">Fecha de Estreno</label>
+          <input type="date" class="form-control" id="fechaEstreno" formControlName="fechaEstreno">
+        </div>
+      
+        <div class="mb-3">
+          <label for="cantidadPublico" class="form-label">Cantidad de Público</label>
+          <input type="number" class="form-control" id="cantidadPublico" formControlName="cantidadPublico">
+        </div>
+      
+        <div class="mb-3">
+          <label for="fotoPelicula" class="form-label">Foto de la Película</label>
+          <input type="file" class="form-control" id="fotoPelicula" formControlName="fotoPelicula" accept=".png, .jpg, .jpeg" (change)="onImageSelected($event)" (click)="resetImageInput()">
+        </div>
+      
+        <div class="mb-3">
+          <label for="actor" class="form-label">Nombre del Actor</label>          
+          <input type="text" class="form-control" id="actor" formControlName="actor">
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>   
+    </div>
+
+    <div class="col">
+      <app-listado-actores (actorSeleccionado)="actualizarActor($event)"></app-listado-actores>
+    </div>
+
+  </div>  
+  
+  
+    
+</div>

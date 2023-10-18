@@ -1,0 +1,14 @@
+.img-card {
+    height: 100px; 
+    width: auto;
+    object-fit: cover; 
+  }
+
+.card{
+  cursor: pointer;
+}
+  .selected {
+    background-color: gray; /* Cambia el color de fondo a gris claro */
+    border: 2px solid #007bff; /* Añade un borde azul */
+  }
+

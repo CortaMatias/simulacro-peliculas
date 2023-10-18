@@ -1,0 +1,22 @@
+
+<div class="container text-light">
+    <div class="row">
+        <h1> Lista de Paises: </h1>
+        <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Buscar país"
+        (input)="filterCountries()"
+      />
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-4 m-1" *ngFor="let pais of filteredCountries">
+          <div class="card h-100" [ngClass]="{selected : pais === selectPais}" (click)="seleccionarPais(pais)">
+            <img loading="lazy" [src]="pais.flag" class="card-img-top img-card" alt="Imagen de {{pais.name}}">
+            <div class="card-body text-center">
+              <p class="card-title">{{pais.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>      
+</div>

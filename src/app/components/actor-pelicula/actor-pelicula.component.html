@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <app-listado-actores (actorSeleccionado)="onActorSeleccionado($event)">
+    </app-listado-actores>
+  </div>
+
+  <div class="row" *ngIf="selectedActor">
+    <div class="col d-flex justify-content-center align-items-center m-3 p-3">
+      <app-detalle-pelicula [actor]="selectedActor" ></app-detalle-pelicula>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center m-3 p-3">
+      <app-detalle-pais [actor]="selectedActor"></app-detalle-pais>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center m-3 p-3">
+      <app-detalle-actor [actor]="selectedActor"></app-detalle-actor>
+    </div>
+  </div>
+</div>
